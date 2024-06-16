@@ -1,0 +1,46 @@
+<!--
+Crie a partir de um script externo uma lista a qual imprima 
+4 filmes do gênero terror;
+Nessa lista deve conter uma tag ul e dentro dessa tag 4 tags li, 
+por enquanto vazias. Cada item deverá ficar dentro de uma única tag li;
+Por enquanto não será pedido para adicionar esses itens a partir 
+de um array, ou seja, pode ser criado 4 variáveis com os nomes de 
+filmes de terror;
+Escolha ao menos 1 filme a qual o seu nome inicie com a letra C;
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Filmes de Terror</title>
+</head>
+<body>
+
+<ul id="lista-filmes">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<script>
+    // Definindo variáveis com os nomes dos filmes de terror
+    var filme1 = "Corra!";
+    var filme2 = "O Exorcista";
+    var filme3 = "It: A Coisa";
+    var filme4 = "O Iluminado";
+
+    // Selecionando os elementos li da lista
+    var itensLista = document.querySelectorAll('#lista-filmes li');
+
+    // Atribuindo os nomes dos filmes aos itens da lista
+    itensLista[0].textContent = filme1;
+    itensLista[1].textContent = filme2;
+    itensLista[2].textContent = filme3;
+    itensLista[3].textContent = filme4;
+</script>
+
+</body>
+</html>

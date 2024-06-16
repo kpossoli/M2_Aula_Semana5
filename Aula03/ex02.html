@@ -1,0 +1,49 @@
+<!--
+Crie uma página HTML com uma div com altura e largura de 200px, 
+adicione uma borda para saber o limite da div. Ao passar o mouse 
+sobre o div, a cor de fundo dele deve mudar para azul. 
+Ao remover o mouse do div, a cor de fundo deve voltar ao normal.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Interativa</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .interactive-div {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            background-color: lightgray;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="interactive-div" 
+         onmouseover="changeColor(this)" 
+         onmouseout="resetColor(this)">
+    </div>
+
+    <script>
+        function changeColor(element) {
+            element.style.backgroundColor = 'blue';
+        }
+
+        function resetColor(element) {
+            element.style.backgroundColor = 'lightgray';
+        }
+    </script>
+</body>
+</html>
+

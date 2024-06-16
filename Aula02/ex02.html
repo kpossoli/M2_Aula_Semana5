@@ -1,0 +1,56 @@
+<!--
+Ainda utilizando a lista de filmes criada anteriormente adicione 
+ao script um código que exclua todas as tags li que, no seu texto 
+interno, iniciam com a letra C.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Filmes de Terror</title>
+</head>
+<body>
+
+<ul id="lista-filmes">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<script>
+    // Definindo variáveis com os nomes dos filmes de terror
+    var filme1 = "Corra!";
+    var filme2 = "O Exorcista";
+    var filme3 = "It: A Coisa";
+    var filme4 = "O Iluminado";
+
+    // Selecionando os elementos li da lista
+    var itensLista = document.querySelectorAll('#lista-filmes li');
+
+    // Atribuindo os nomes dos filmes aos itens da lista
+    itensLista[0].textContent = filme1;
+    itensLista[1].textContent = filme2;
+    itensLista[2].textContent = filme3;
+    itensLista[3].textContent = filme4;
+
+    // Função para remover itens da lista que começam com a letra 'C'
+    function removerItensQueComecamComC() {
+        var lista = document.getElementById('lista-filmes');
+        var itens = lista.getElementsByTagName('li');
+        
+        for (var i = itens.length - 1; i >= 0; i--) {
+            if (itens[i].textContent.startsWith('C')) {
+                lista.removeChild(itens[i]);
+            }
+        }
+    }
+
+    // Chamar a função para remover os itens
+    removerItensQueComecamComC();
+</script>
+
+</body>
+</html>

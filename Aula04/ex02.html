@@ -1,0 +1,77 @@
+<!--
+    Observando o seguinte formulário crie todas as seguintes
+validações e assim que o usuário clicar em enviar informe quais
+os campos que não batem com a validação:
+Validações:
+- o campo email, nome e telefone devem ser obrigatórios
+- No campo de telefone faça a validação para ter o seguinte
+formato: (11) 99999-9999
+- No campo nome ele deve possuir no mínimo 3 caracteres.
+
+<form name="meuFormulario">
+Nome: <input type="text" name="nome" /><br />
+Email: <input type="email" name="email" /><br />
+Telefone:<input type="text" name="telefone"/><br />
+<button type="submit">Enviar</button>
+</form>
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+</head>
+<body>
+    <h2>Formulário de Cadastro</h2>
+    <form name="meuFormulario" id="meuFormulario">
+        Nome: <input type="text" name="nome" id="nome" /><br /><br />
+        Email: <input type="email" name="email" id="email" /><br /><br />
+        Telefone: <input type="text" name="telefone" id="telefone" /><br /><br />
+        <button type="button" onclick="validarFormulario()">Enviar</button>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            // Captura dos elementos do formulário
+            const form = document.forms['meuFormulario'];
+            const nome = form['nome'].value.trim();
+            const email = form['email'].value.trim();
+            const telefone = form['telefone'].value.trim();
+            
+            // Mensagem de erro
+            let mensagensErro = [];
+
+            // Validação do campo nome (obrigatório e mínimo 3 caracteres)
+            if (!nome) {
+                mensagensErro.push("O campo Nome é obrigatório.");
+            } else if (nome.length < 3) {
+                mensagensErro.push("O campo Nome deve possuir no mínimo 3 caracteres.");
+            }
+
+            // Validação do campo email (obrigatório)
+            if (!email) {
+                mensagensErro.push("O campo Email é obrigatório.");
+            }
+
+            // Validação do campo telefone (obrigatório e formato)
+            const telefoneRegex = /^\(\d{2}\) \d{5}-\d{4}$/;
+            if (!telefone) {
+                mensagensErro.push("O campo Telefone é obrigatório.");
+            } else if (!telefoneRegex.test(telefone)) {
+                mensagensErro.push("O campo Telefone deve estar no formato (11) 99999-9999.");
+            }
+
+            // Exibição das mensagens de erro
+            if (mensagensErro.length > 0) {
+                alert(mensagensErro.join("\n"));
+            } else {
+                alert("Formulário enviado com sucesso!");
+                // Aqui você pode adicionar a lógica para enviar o formulário
+                // form.submit(); // Descomente esta linha para enviar o formulário
+            }
+        }
+    </script>
+</body>
+</html>

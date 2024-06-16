@@ -1,0 +1,43 @@
+<!--
+Crie uma página HTML com um botão e um parágrafo escrito 
+“Clique no botão”. Ao clicar no botão, o texto do parágrafo 
+deve mudar para "Você clicou no botão!".
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Botão</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        p {
+            font-size: 18px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p id="mensagem">Clique no botão</p>
+    <button onclick="mudarTexto()">Clique aqui</button>
+
+    <script>
+        function mudarTexto() {
+            document.getElementById("mensagem").innerText = "Você clicou no botão!";
+        }
+    </script>
+</body>
+</html>
